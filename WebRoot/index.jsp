@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	This is my JSP page.
+	This is my JSP 
 	<br>
 </body>
 </html>
