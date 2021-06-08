@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	This is my JSP 
+	<a href="login">sss</a>
 	<br>
 </body>
 </html>
