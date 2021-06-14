@@ -3,13 +3,32 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<!-- struts2的action必须放在一个指定的包空间下定义 -->
+
 	<package name="default" extends="struts-default">
-		<!-- 定义处理请求URL为login.action的Action -->
-		<action name="login" class="action.account.Login">
-			<!-- 定义处理结果字符串和资源之间的映射关系 -->
+
+		<action name="login" class="action.account.LoginAction">
 			<result name="success">/jsp/index.html</result>
-			<result name="error">/index.jsp</result>
+			<result name="failed">/index.jsp</result>
 		</action>
 	</package>
+	<package name="user" extends="default">
+		<action name="changePasswordAction" class="action.account.ChangePasswordAction">
+			<param name="username"></param>
+			<result name="success">/index.jsp</result>
+			<result name="failed">/shared/changepassword.jsp</result>
+		</action>
+		<action name="logoutAction" class="action.account.LogoutAction">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+	<package name="admin" namespace="/admin" extends="user">
+		<action name="*Mgr*Action" class="action.admin.{1}MgrAction"
+			method="{2}">
+			<result name="list">/jsp/admin/user/{1}/list.jsp</result>
+			<result name="one">/jsp/admin/user/{1}/one.jsp</result>
+			<result name="edit">/jsp/admin/user/{1}/edit.jsp</result>
+			<result name="update">/shared/success.html</result>
+		</action>
+	</package>
+
 </struts>

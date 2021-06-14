@@ -17,7 +17,8 @@
 </head>
 
 <body>
-	<a href="login">sss</a>
-	<br>
+	<form action="login">
+	<input type="submit" value="ss"/>
+	</form>
 </body>
 </html>

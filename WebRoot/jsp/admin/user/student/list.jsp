@@ -9,6 +9,7 @@
 </head>
 
 <body>
-
+学生信息——列表
+<a href="/admin/studentListAction">ssss</a>
 </body>
 </html>
